@@ -1,23 +1,24 @@
+#language:es
+@casos
+Característica: : iniciar y cerrar sesion en el sistema correctamente
+  como usuario
+  quiero validar el inicio de sesion
+  para luego cerrar sesion
 
-@todalaprueba
-Feature: login de registro
-  como cliente necesito iniciar sesion
+  Antecedentes:
+    Dado que ingreso ala pagina web "https://bpmodliq.bluepartner.com.pe/Login_ctrl"
 
-  @prueba
-  #autor: gus
-  Scenario Outline: como cliente quiero registrar dos productos  en el carrito de compras
-    Given  validar que la pagina web "https://bpmodliq.bluepartner.com.pe/Login_ctrl" del banco este activa
-    #And    selecccionar el primer producto
-    #And    seleccionar cantidad
-    #And    click en agregar carro
+  @caso_01
+  Esquema del escenario:
+  CP_01 Happy Path ingresar al sistema con email VALIDO ,contraseña VALIDO
 
-    And ingresar el correo el correo "<correo>"
-    And ingresar password del usuario
-    And click en ingresar
-    And click en rendicion de viaje
-    And click en cerrar sesion
+    Cuando escribo el correo electronico "<correo>"
+    Y escribo la contraseña
+    Y doy clic en el boton ingresar
+    Y doy clic en el boton rendicion de viaje
+    Entonces doy clic en el boton cerrar sesion
 
-    Examples:
+    Ejemplos:
 
       | correo                            |
       | gustavo.alvaro@bluepartner.com.pe |

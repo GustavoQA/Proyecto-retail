@@ -1,7 +1,9 @@
 package definitions;
 
-import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
+import io.cucumber.java.es.Cuando;
+import io.cucumber.java.es.Dado;
+import io.cucumber.java.es.Entonces;
+import io.cucumber.java.es.Y;
 import pageobjects.menulogin;
 import pageobjects.rendicionpage;
 
@@ -19,11 +21,13 @@ public class logindefinition {
        rendi = new rendicionpage();
     }
 
-    @Given("validar que la pagina web {string} del banco este activa")
-    public void validarQueLaPaginaWebDelBancoEsteActiva(String url) throws IOException {
+    //antecedentes
+    @Dado("que ingreso ala pagina web {string}")
+    public void queIngresoAlaPaginaWeb(String url) throws IOException {
         hooks.driver.get(url);
         evidencias();
     }
+
 /*
     @And("selecccionar el primer producto")
     public void selecccionarElPrimerProducto() {
@@ -42,50 +46,42 @@ public class logindefinition {
         login.clickcomprar();
     }*/
 
-
-
-    @And("ingresar el correo el correo {string}")
-    public void ingresarElCorreoElCorreo(String correo) throws IOException {
+    @Cuando("escribo el correo electronico {string}")
+    public void escriboElCorreoElectronico(String correo) throws IOException {
         login.escribirorreo(correo);
         evidencias();
-
     }
 
 
-
-    @And("ingresar password del usuario")
-    public void ingresarPasswordDelUsuario() throws IOException {
+    @Y("escribo la contraseña")
+    public void escriboLaContrasena() throws IOException {
         login.escribicontrasena("44105636");
         evidencias();
-
     }
 
 
-    @And("click en ingresar")
-    public void clickEnIngresar() throws IOException {
+    @Y("doy clic en el boton ingresar")
+    public void doyClicEnElBotonIngresar() throws IOException {
         login.clickiniciarsesion();
         login.ventanaactiva();
         evidencias();
     }
 
 
-    @And("click en rendicion de viaje")
-    public void clickEnRendicionDeViaje() throws IOException {
-         rendi.clickrendicuenta();
-         rendi.ventanaactiva();
-        evidencias();
-    }
-
-
-    @And("click en cerrar sesion")
-    public void clickEnCerrarSesion() throws IOException {
-        rendi.clickcerrarsesion();
+    @Y("doy clic en el boton rendicion de viaje")
+    public void doyClicEnElBotonRendicionDeViaje() throws IOException {
+        rendi.clickrendicuenta();
         rendi.ventanaactiva();
         evidencias();
     }
 
 
-
+    @Entonces("doy clic en el boton cerrar sesion")
+    public void doyClicEnElBotonCerrarSesion() throws IOException {
+        rendi.clickcerrarsesion();
+        rendi.ventanaactiva();
+        evidencias();
+    }
 
 
 
