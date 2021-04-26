@@ -1,0 +1,8 @@
+definitions\hooks.class
+definitions\logindefinition.class
+pageobjects\rendicionpage.class
+pageobjects\menulogin.class
+support\runtestcucumber.class
+support\util.class
+support\runtest_serenity.class
+support\screeshots.class

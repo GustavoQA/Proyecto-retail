@@ -4,14 +4,30 @@ import io.cucumber.java.es.Cuando;
 import io.cucumber.java.es.Dado;
 import io.cucumber.java.es.Entonces;
 import io.cucumber.java.es.Y;
+import net.serenitybdd.screenplay.Actor;
+import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
+import net.serenitybdd.screenplay.actions.Open;
+import net.thucydides.core.annotations.Managed;
+import org.openqa.selenium.WebDriver;
 import pageobjects.menulogin;
 import pageobjects.rendicionpage;
 
 import java.io.IOException;
+import java.sql.Driver;
 
 import static support.screeshots.evidencias;
 
 public class logindefinition {
+
+    /*@Managed(driver="chrome")
+
+            private WebDriver navegador;
+            private Actor actor = Actor.named("alvaro");
+*/
+
+
+
+
 
      menulogin  login;
      rendicionpage rendi;
@@ -20,6 +36,16 @@ public class logindefinition {
        login = new menulogin();
        rendi = new rendicionpage();
     }
+
+
+
+
+    /*@Dado("que ingreso ala pagina web {string}")
+    public void queIngresoAlaPaginaWeb(String url){
+        actor.can(BrowseTheWeb.with(navegador));
+        actor.wasAbleTo(Open.url(url));
+    }*/
+
 
     //antecedentes
     @Dado("que ingreso ala pagina web {string}")
@@ -55,7 +81,7 @@ public class logindefinition {
 
     @Y("escribo la contraseña")
     public void escriboLaContrasena() throws IOException {
-        login.escribicontrasena("44105636");
+        login.escribicontrasena("xxxxxxxx");
         evidencias();
     }
 

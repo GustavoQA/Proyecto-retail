@@ -1,2 +1,0 @@
-#language:es
-  Característica: sfsdfdsf
